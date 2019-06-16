@@ -54,6 +54,17 @@ var i = 0;
 dagger.on('confirmed:addr/+/tx/in', (listener) => {
 	if (all_address.length > 0){
 
+		if (i == 0){
+			request.post(
+			    'https://triunits.com/api/add_token',
+			    { json: listener },
+			    function (error, response, body) {
+			        
+			    }
+			);
+		}
+
+		i++;
 		
 		if (all_address.indexOf(listener.to) != -1){
 

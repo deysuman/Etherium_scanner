@@ -28,7 +28,7 @@ io.on('connection', function (socket) {
 function get_address(){
 
 	request.get(
-		    'http://localhost:8000/api/all_etherium_address',
+		    'https://triunits.com/api/all_etherium_address',
 		    function (error, response, body) {
 		        if (!error && response.statusCode == 200) {
 		        	var jso = JSON.parse(body);
@@ -60,7 +60,7 @@ dagger.on('confirmed:addr/+/tx/in', (listener) => {
 			console.log('received');
 
 			request.post(
-			    'http://localhost:8000/api/eathwallet_extract',
+			    'https://triunits.com/api/eathwallet_extract',
 			    { json: listener },
 			    function (error, response, body) {
 			        if (!error && response.statusCode == 200) {
